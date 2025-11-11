@@ -1,16 +1,11 @@
 {
-  "version": 2,
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "regions": ["icn1"],
-  "env": {
-    "NEXT_PUBLIC_API_BASE_URL": "@api_base_url",
-    "NEXT_PUBLIC_SITE_URL": "@site_url",
-    "NEXT_PUBLIC_SITE_NAME": "@site_name",
-    "NEXT_PUBLIC_SITE_DESCRIPTION": "@site_description"
-  },
+  "regions": [
+    "icn1"
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -26,6 +21,10 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
         }
       ]
     }
