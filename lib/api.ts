@@ -1,5 +1,23 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000/api'
 
+// Fetch with timeout wrapper
+async function fetchWithTimeout(url: string, options: RequestInit = {}, timeout = 10000) {
+  const controller = new AbortController()
+  const id = setTimeout(() => controller.abort(), timeout)
+
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    })
+    clearTimeout(id)
+    return response
+  } catch (error) {
+    clearTimeout(id)
+    throw error
+  }
+}
+
 export interface Post {
   id: string
   title: string
@@ -37,7 +55,7 @@ export interface PostsResponse {
 }
 
 export async function getPosts(page: number = 1, limit: number = 10): Promise<PostsResponse> {
-  const response = await fetch(
+  const response = await fetchWithTimeout(
     `${API_BASE_URL}/posts?page=${page}&limit=${limit}&status=published`,
     {
       next: { revalidate: 60 }, // Revalidate every minute
@@ -52,7 +70,7 @@ export async function getPosts(page: number = 1, limit: number = 10): Promise<Po
 }
 
 export async function getPost(slug: string): Promise<Post> {
-  const response = await fetch(`${API_BASE_URL}/posts/${slug}`, {
+  const response = await fetchWithTimeout(`${API_BASE_URL}/posts/${slug}`, {
     next: { revalidate: 60 },
   })
 
@@ -67,7 +85,7 @@ export async function getPost(slug: string): Promise<Post> {
 }
 
 export async function getComments(postId: string): Promise<Comment[]> {
-  const response = await fetch(`${API_BASE_URL}/comments?post_id=${postId}`, {
+  const response = await fetchWithTimeout(`${API_BASE_URL}/comments?post_id=${postId}`, {
     next: { revalidate: 30 },
   })
 
@@ -84,7 +102,7 @@ export async function createComment(data: {
   password: string
   content: string
 }): Promise<Comment> {
-  const response = await fetch(`${API_BASE_URL}/comments`, {
+  const response = await fetchWithTimeout(`${API_BASE_URL}/comments`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -104,7 +122,7 @@ export async function updateComment(
   commentId: string,
   data: { password: string; content: string }
 ): Promise<Comment> {
-  const response = await fetch(`${API_BASE_URL}/comments/${commentId}`, {
+  const response = await fetchWithTimeout(`${API_BASE_URL}/comments/${commentId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -121,7 +139,7 @@ export async function updateComment(
 }
 
 export async function deleteComment(commentId: string, password: string): Promise<void> {
-  const response = await fetch(`${API_BASE_URL}/comments/${commentId}`, {
+  const response = await fetchWithTimeout(`${API_BASE_URL}/comments/${commentId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

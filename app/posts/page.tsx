@@ -7,6 +7,7 @@ export const metadata = {
   description: 'Browse all blog posts created with AI-powered content optimization.',
 }
 
+export const dynamic = 'force-dynamic' // Skip static generation at build time
 export const revalidate = 60
 
 export default async function PostsPage() {

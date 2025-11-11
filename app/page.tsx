@@ -2,6 +2,7 @@ import Link from 'next/link'
 import PostCard from '@/components/PostCard'
 import { getPosts } from '@/lib/api'
 
+export const dynamic = 'force-dynamic' // Skip static generation at build time
 export const revalidate = 60 // Revalidate every minute
 
 export default async function HomePage() {

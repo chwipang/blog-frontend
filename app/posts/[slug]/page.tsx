@@ -12,6 +12,8 @@ interface PostPageProps {
   }
 }
 
+export const dynamic = 'force-dynamic' // Skip static generation at build time
+
 export async function generateMetadata({ params }: PostPageProps) {
   try {
     const post = await getPost(params.slug)
