@@ -24,7 +24,7 @@ export default function PostCard({ post }: PostCardProps) {
         </div>
       </div>
 
-      <h2 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
+      <h2 className="text-xl font-bold text-gray-900 mb-3 hover:text-[#E20871] transition-colors">
         <Link href={`/posts/${post.slug}`}>
           {post.title}
         </Link>
@@ -39,9 +39,9 @@ export default function PostCard({ post }: PostCardProps) {
       <div className="flex items-center justify-between">
         <Link
           href={`/posts/${post.slug}`}
-          className="text-blue-600 hover:text-blue-800 font-medium text-sm flex items-center group"
+          className="text-[#E20871] hover:text-[#A0054F] font-medium text-sm flex items-center group"
         >
-          Read more
+          더 보기
           <svg
             className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"
             fill="none"
@@ -54,7 +54,7 @@ export default function PostCard({ post }: PostCardProps) {
 
         <div className="flex items-center space-x-2 text-sm text-gray-400">
           <span className="px-2 py-1 bg-gray-100 rounded-full text-xs">
-            Article
+            아티클
           </span>
         </div>
       </div>

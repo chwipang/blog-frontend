@@ -4,8 +4,8 @@ import PostCard from '@/components/PostCard'
 import { getPosts } from '@/lib/api'
 
 export const metadata = {
-  title: 'All Posts',
-  description: 'Browse all blog posts created with AI-powered content optimization.',
+  title: '전체 포스트',
+  description: '15년 취업 컨설팅 노하우를 담은 잡프라이즈의 모든 콘텐츠를 확인하세요.',
 }
 
 export const dynamic = 'force-dynamic' // Skip static generation at build time
@@ -68,10 +68,10 @@ export default async function PostsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              All Posts
+              전체 포스트
             </h1>
             <p className="text-xl text-gray-600">
-              No posts available yet
+              아직 작성된 포스트가 없습니다
             </p>
           </div>
           <div className="text-center py-16">
@@ -91,10 +91,10 @@ export default async function PostsPage() {
               </svg>
             </div>
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-              No Posts Found
+              포스트가 없습니다
             </h2>
             <p className="text-gray-600 mb-8">
-              There are currently no published posts. Check back later for new content!
+              현재 게시된 포스트가 없습니다. 나중에 다시 확인해주세요!
             </p>
           </div>
         </div>
@@ -107,10 +107,10 @@ export default async function PostsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              All Posts
+              전체 포스트
             </h1>
             <p className="text-xl text-gray-600">
-              Explore {total} AI-optimized {total === 1 ? 'article' : 'articles'}
+              {total}개의 취업 인사이트 {total === 1 ? '아티클' : '아티클'}
             </p>
           </div>
 
@@ -126,10 +126,10 @@ export default async function PostsPage() {
               {pages > 1 && (
                 <div className="mt-12 text-center">
                   <p className="text-gray-600">
-                    Showing page 1 of {pages}
+                    전체 {pages}페이지 중 1페이지
                   </p>
                   <p className="text-sm text-gray-500 mt-2">
-                    Pagination coming soon!
+                    페이지네이션 기능 준비 중!
                   </p>
                 </div>
               )}

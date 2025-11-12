@@ -1,13 +1,13 @@
-import Link from 'next/link'
-import PostCard from '@/components/PostCard'
-import { getPosts } from '@/lib/api'
+import Link from "next/link";
+import PostCard from "@/components/PostCard";
+import { getPosts } from "@/lib/api";
 
-export const dynamic = 'force-dynamic' // Skip static generation at build time
-export const revalidate = 60 // Revalidate every minute
+export const dynamic = "force-dynamic"; // Skip static generation at build time
+export const revalidate = 60; // Revalidate every minute
 
 export default async function HomePage() {
   try {
-    const { posts, total } = await getPosts(1, 6) // Get first 6 posts
+    const { posts, total } = await getPosts(1, 6); // Get first 6 posts
 
     return (
       <div className="min-h-screen bg-gray-50">
@@ -18,8 +18,8 @@ export default async function HomePage() {
               취업의신 공식 블로그
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-              15년 취업컨설팅 노하우, 1,600만 누적 방문, 6만6천 명의 특강 청강자.
-              실제 합격 데이터를 바탕으로 실무형 취업 전략을 전합니다.
+              15년 취업컨설팅 노하우, 1,600만 누적 방문, 6만6천 명의 잡콘서트
+              청강자. 실제 합격 데이터를 바탕으로 실무형 취업 전략을 전합니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -59,11 +59,8 @@ export default async function HomePage() {
                 </div>
 
                 <div className="text-center">
-                  <Link
-                    href="/posts"
-                    className="btn-primary text-lg px-8 py-3"
-                  >
-                    View All Posts ({total})
+                  <Link href="/posts" className="btn-primary text-lg px-8 py-3">
+                    전체 포스트 보기 ({total})
                   </Link>
                 </div>
               </>
@@ -85,10 +82,10 @@ export default async function HomePage() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  No Posts Yet
+                  아직 포스트가 없습니다
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Posts will appear here once they are published by the admin.
+                  관리자가 포스트를 게시하면 여기에 표시됩니다.
                 </p>
               </div>
             )}
@@ -103,7 +100,8 @@ export default async function HomePage() {
                 잡프라이즈의 강점
               </h2>
               <p className="text-xl text-gray-600">
-                15년 업력과 검증된 합격 데이터로 차별화된 취업 솔루션을 제공합니다.
+                15년 업력과 검증된 합격 데이터로 차별화된 취업 솔루션을
+                제공합니다.
               </p>
             </div>
 
@@ -128,7 +126,8 @@ export default async function HomePage() {
                   실무형 콘텐츠
                 </h3>
                 <p className="text-gray-600">
-                  현직 인사담당자 350명이 참여한 HR아너스포럼의 실제 사례 기반 콘텐츠.
+                  현직 인사담당자 350명이 참여한 HR아너스포럼의 실제 사례 기반
+                  콘텐츠.
                 </p>
               </div>
 
@@ -152,7 +151,8 @@ export default async function HomePage() {
                   검증된 합격데이터
                 </h3>
                 <p className="text-gray-600">
-                  17,000건의 입사서류와 30,000건 이상의 취업데이터로 분석된 합격 기준 제공.
+                  17,000건의 입사서류와 30,000건 이상의 취업데이터로 분석된 합격
+                  기준 제공.
                 </p>
               </div>
 
@@ -176,14 +176,15 @@ export default async function HomePage() {
                   회원 후기·피드백
                 </h3>
                 <p className="text-gray-600">
-                  컨설팅 회원들의 실제 후기와 커리어 피드백이 반영되는 참여형 커뮤니티 운영.
+                  컨설팅 회원들의 실제 후기와 커리어 피드백이 반영되는 참여형
+                  커뮤니티 운영.
                 </p>
               </div>
             </div>
           </div>
         </section>
       </div>
-    )
+    );
   } catch (error) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -194,14 +195,11 @@ export default async function HomePage() {
           <p className="text-gray-600 mb-6">
             Please check if the API server is running and try again.
           </p>
-          <Link
-            href="/posts"
-            className="btn-primary"
-          >
+          <Link href="/posts" className="btn-primary">
             Try Again
           </Link>
         </div>
       </div>
-    )
+    );
   }
 }

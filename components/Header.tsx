@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
 interface HeaderProps {
@@ -6,18 +7,19 @@ interface HeaderProps {
 }
 
 export default function Header({ className }: HeaderProps) {
-  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || '잡프라이즈 블로그'
-
   return (
     <header className={cn('bg-white shadow-sm border-b', className)}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-[#E20871] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">J</span>
-              </div>
-              <span className="text-xl font-bold text-gray-900">{siteName}</span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.svg"
+                alt="Jobpang Logo"
+                width={133}
+                height={36}
+                priority
+              />
             </Link>
           </div>
 
