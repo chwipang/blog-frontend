@@ -86,7 +86,7 @@ export default function Footer({ className }: FooterProps) {
 
         <div className="mt-8 pt-8 border-t border-gray-200">
           <p className="text-center text-gray-400 text-sm">
-            © {currentYear} 잡프라이즈(JobPrize). All rights reserved.
+            © {currentYear} 잡프라이즈(JobPrise). All rights reserved.
           </p>
         </div>
       </div>
