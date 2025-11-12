@@ -5,7 +5,7 @@ interface FooterProps {
 }
 
 export default function Footer({ className }: FooterProps) {
-  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'AI Blog'
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || '잡프라이즈 블로그'
   const currentYear = new Date().getFullYear()
 
   return (
@@ -14,14 +14,13 @@ export default function Footer({ className }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">🤖</span>
+              <div className="w-8 h-8 bg-[#E20871] rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">J</span>
               </div>
               <span className="text-xl font-bold text-gray-900">{siteName}</span>
             </div>
             <p className="text-gray-600 max-w-md">
-              AI-powered blog with intelligent content optimization and SEO enhancement.
-              Creating beautiful, engaging content automatically.
+              15년간 축적된 취업컨설팅 노하우와 데이터로, 구직자와 기업을 연결하는 잡프라이즈의 공식 콘텐츠 채널입니다.
             </p>
           </div>
 
@@ -74,7 +73,7 @@ export default function Footer({ className }: FooterProps) {
 
         <div className="mt-8 pt-8 border-t border-gray-200">
           <p className="text-center text-gray-400 text-sm">
-            © {currentYear} {siteName}. All rights reserved. Powered by AI.
+            © {currentYear} 잡프라이즈(JobPrize). All rights reserved.
           </p>
         </div>
       </div>

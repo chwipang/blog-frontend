@@ -6,7 +6,7 @@ interface HeaderProps {
 }
 
 export default function Header({ className }: HeaderProps) {
-  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'AI Blog'
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || '잡프라이즈 블로그'
 
   return (
     <header className={cn('bg-white shadow-sm border-b', className)}>
@@ -14,8 +14,8 @@ export default function Header({ className }: HeaderProps) {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">🤖</span>
+              <div className="w-8 h-8 bg-[#E20871] rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">J</span>
               </div>
               <span className="text-xl font-bold text-gray-900">{siteName}</span>
             </Link>

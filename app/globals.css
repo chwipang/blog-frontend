@@ -18,7 +18,7 @@
   }
 
   .btn-primary {
-    @apply btn bg-blue-600 text-white hover:bg-blue-700;
+    @apply btn bg-[#E20871] text-white hover:bg-[#C80666];
   }
 
   .btn-secondary {
@@ -60,7 +60,7 @@
   }
 
   .prose-custom blockquote {
-    @apply border-l-4 border-blue-500 pl-4 italic text-gray-600;
+    @apply border-l-4 border-[#E20871] pl-4 italic text-gray-600;
   }
 
   .prose-custom ul,
@@ -73,6 +73,6 @@
   }
 
   .prose-custom a {
-    @apply text-blue-600 hover:text-blue-800 underline;
+    @apply text-[#E20871] hover:text-[#A0054F] underline;
   }
 }

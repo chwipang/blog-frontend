@@ -12,27 +12,27 @@ export default async function HomePage() {
     return (
       <div className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-20">
+        <section className="bg-gradient-to-r from-[#E20871] to-[#A0054F] text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              AI-Powered Blog
+              취업의신 공식 블로그
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-              Discover intelligent content creation with SEO optimization,
-              beautiful formatting, and engaging storytelling powered by artificial intelligence.
+              15년 취업컨설팅 노하우, 1,600만 누적 방문, 6만6천 명의 특강 청강자.
+              실제 합격 데이터를 바탕으로 실무형 취업 전략을 전합니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/posts"
-                className="btn-primary text-lg px-8 py-3 bg-white text-blue-600 hover:bg-gray-100"
+                className="text-lg px-8 py-3 bg-white text-[#E20871] hover:bg-gray-100 rounded-md font-medium transition-colors"
               >
-                Read Latest Posts
+                최근 글 보기
               </Link>
               <Link
                 href="/about"
-                className="btn-secondary text-lg px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-blue-600"
+                className="text-lg px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-[#E20871] rounded-md font-medium transition-colors"
               >
-                Learn More
+                잡프라이즈 소개
               </Link>
             </div>
           </div>
@@ -43,11 +43,10 @@ export default async function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Latest Posts
+                최신 포스트
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Explore our collection of AI-generated content, optimized for both
-                readers and search engines.
+                실제 컨설팅 후기와 합격 사례를 기반으로 한 취업전략 콘텐츠
               </p>
             </div>
 
@@ -101,18 +100,18 @@ export default async function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Powered by AI
+                잡프라이즈의 강점
               </h2>
               <p className="text-xl text-gray-600">
-                Experience the future of content creation and optimization
+                15년 업력과 검증된 합격 데이터로 차별화된 취업 솔루션을 제공합니다.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-pink-100 rounded-full flex items-center justify-center">
                   <svg
-                    className="w-8 h-8 text-blue-600"
+                    className="w-8 h-8 text-[#E20871]"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -126,10 +125,10 @@ export default async function HomePage() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  AI-Generated Content
+                  실무형 콘텐츠
                 </h3>
                 <p className="text-gray-600">
-                  Intelligent content creation with proper formatting, structure, and engaging writing style.
+                  현직 인사담당자 350명이 참여한 HR아너스포럼의 실제 사례 기반 콘텐츠.
                 </p>
               </div>
 
@@ -145,15 +144,15 @@ export default async function HomePage() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                      d="M9 19v-6a2 2 0 00-2-2H5v8h4zm6 0V9a2 2 0 00-2-2h-2v12h4z"
                     />
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  SEO Optimized
+                  검증된 합격데이터
                 </h3>
                 <p className="text-gray-600">
-                  Automatic SEO optimization with meta tags, keywords, and structured data for better search rankings.
+                  17,000건의 입사서류와 30,000건 이상의 취업데이터로 분석된 합격 기준 제공.
                 </p>
               </div>
 
@@ -169,15 +168,15 @@ export default async function HomePage() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
+                      d="M7 8h10M7 12h4m1 8l-4-4H5v-8h14v8h-3l-4 4z"
                     />
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Interactive Comments
+                  회원 후기·피드백
                 </h3>
                 <p className="text-gray-600">
-                  Engage with readers through our anonymous comment system with moderation tools.
+                  컨설팅 회원들의 실제 후기와 커리어 피드백이 반영되는 참여형 커뮤니티 운영.
                 </p>
               </div>
             </div>
