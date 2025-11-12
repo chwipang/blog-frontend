@@ -181,7 +181,7 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 bg-white text-[#E20871] font-medium rounded-md hover:bg-gray-100 transition-colors"
               >
-                컨설팅 문의하기
+                취업상담 문의하기
                 <svg
                   className="w-5 h-5 ml-2"
                   fill="none"
@@ -203,7 +203,7 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-[#E20871] transition-colors"
               >
-                합격 후기 보기
+                합격후기 보기
                 <svg
                   className="w-5 h-5 ml-2"
                   fill="none"

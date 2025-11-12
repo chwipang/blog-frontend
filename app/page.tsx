@@ -183,6 +183,59 @@ export default async function HomePage() {
             </div>
           </div>
         </section>
+        <div className="text-center bg-gradient-to-r from-[#E20871] to-[#A0054F] text-white rounded-lg p-8">
+          <h2 className="text-2xl font-bold mb-4">취업 러닝 메이트</h2>
+          <p className="text-xl mb-6 opacity-90">
+            잡프라이즈는 단순 컨설팅 회사를 넘어, 커리어의 방향을 함께 설계하는
+            파트너입니다.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="http://pf.kakao.com/_CxofCd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-white text-[#E20871] font-medium rounded-md hover:bg-gray-100 transition-colors"
+            >
+              컨설팅 문의하기
+              <svg
+                className="w-5 h-5 ml-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="https://blog.naver.com/jobprise"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-[#E20871] transition-colors"
+            >
+              합격 후기 보기
+              <svg
+                className="w-5 h-5 ml-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
     );
   } catch (error) {
