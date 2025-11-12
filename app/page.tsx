@@ -15,7 +15,7 @@ export default async function HomePage() {
         <section className="bg-gradient-to-r from-[#E20871] to-[#A0054F] text-white py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              취업의신 공식 블로그
+              취업의신 블로그
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
               15년 취업컨설팅 노하우, 1,600만 누적 방문, 6만6천 명의 잡콘서트
