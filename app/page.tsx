@@ -18,8 +18,9 @@ export default async function HomePage() {
               취업의신 블로그
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-              15년 취업컨설팅 노하우, 1,600만 누적 방문, 6만6천 명의 잡콘서트
-              청강자. 실제 합격 데이터를 바탕으로 실무형 취업 전략을 전합니다.
+              취업의신 잡프라이즈 - 15년 취업컨설팅 노하우, 1,600만 누적 방문,
+              6만6천 명의 잡콘서트 청강자. 취업의신과 함께 실제 합격 데이터를
+              바탕으로 실무형 취업 전략을 전합니다.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -97,10 +98,10 @@ export default async function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                잡프라이즈의 강점
+                취업의신 잡프라이즈의 강점
               </h2>
               <p className="text-xl text-gray-600">
-                15년 업력과 검증된 합격 데이터로 차별화된 취업 솔루션을
+                취업의신 15년 업력과 검증된 합격 데이터로 차별화된 취업 솔루션을
                 제공합니다.
               </p>
             </div>
@@ -184,10 +185,12 @@ export default async function HomePage() {
           </div>
         </section>
         <div className="text-center bg-gradient-to-r from-[#E20871] to-[#A0054F] text-white rounded-lg p-8">
-          <h2 className="text-2xl font-bold mb-4">취업 러닝 메이트</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            취업의신과 함께하는 취업 러닝 메이트
+          </h2>
           <p className="text-xl mb-6 opacity-90">
-            잡프라이즈는 단순 컨설팅 회사를 넘어, 커리어의 방향을 함께 설계하는
-            파트너입니다.
+            취업의신 잡프라이즈는 단순 컨설팅 회사를 넘어, 커리어의 방향을 함께
+            설계하는 파트너입니다.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">

@@ -1,7 +1,15 @@
 export const metadata = {
-  title: "About",
+  title: "About | 취업의신 잡프라이즈 소개",
   description:
-    "15년 취업컨설팅 노하우와 30,000건 이상의 취업데이터로 검증된 잡프라이즈의 브랜드 스토리.",
+    "취업의신 잡프라이즈 - 15년 취업컨설팅 노하우와 30,000건 이상의 취업데이터로 검증된 대한민국 대표 취업 컨설팅 브랜드. 취업의신과 함께하는 합격 스토리.",
+  keywords: [
+    "취업의신",
+    "잡프라이즈",
+    "취업컨설팅",
+    "합격전략",
+    "취업특강",
+    "면접컨설팅",
+  ],
 };
 
 export default function AboutPage() {
@@ -10,10 +18,10 @@ export default function AboutPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            About JobPrise
+            취업의신 잡프라이즈
           </h1>
           <p className="text-xl text-gray-600">
-            15년 노하우로 증명된 취업 성공 솔루션
+            15년 노하우로 증명된 취업의신의 취업 성공 솔루션
           </p>
         </div>
 

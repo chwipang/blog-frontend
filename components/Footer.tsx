@@ -22,8 +22,9 @@ export default function Footer({ className }: FooterProps) {
               />
             </div>
             <p className="text-gray-600 max-w-md">
-              15년간 축적된 취업컨설팅 노하우와 데이터로, 구직자와 기업을
-              연결하는 잡프라이즈의 공식 콘텐츠 채널입니다.
+              취업의신 잡프라이즈 - 15년간 축적된 취업컨설팅 노하우와 데이터로,
+              구직자와 기업을 연결하는 대한민국 대표 취업 컨설팅 브랜드의 공식
+              콘텐츠 채널입니다.
             </p>
           </div>
 
@@ -86,7 +87,7 @@ export default function Footer({ className }: FooterProps) {
 
         <div className="mt-8 pt-8 border-t border-gray-200">
           <p className="text-center text-gray-400 text-sm">
-            © {currentYear} 잡프라이즈(JobPrise). All rights reserved.
+            © {currentYear} 취업의신 잡프라이즈(JobPrise). All rights reserved.
           </p>
         </div>
       </div>
