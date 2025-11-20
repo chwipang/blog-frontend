@@ -99,7 +99,7 @@ export default function RootLayout({
       <head>
         <meta
           name="naver-site-verification"
-          content="310338245302c6fbb779d27e2d6728eabe7c8774"
+          content="27d12f6795007245fafa2602fae325c564e0fd46"
         />
         <script
           type="application/ld+json"
