@@ -68,7 +68,6 @@ export const metadata = {
   },
   verification: {
     google: "HRkWAN9MmzRYdLFVpBNMOhpjdWeQGiCI2i6vmr5NGas",
-    naver: "310338245302c6fbb779d27e2d6728eabe7c8774",
   },
 };
 
@@ -98,6 +97,10 @@ export default function RootLayout({
   return (
     <html lang="ko" className="h-full">
       <head>
+        <meta
+          name="naver-site-verification"
+          content="310338245302c6fbb779d27e2d6728eabe7c8774"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
