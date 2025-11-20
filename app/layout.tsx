@@ -68,6 +68,7 @@ export const metadata = {
   },
   verification: {
     google: "HRkWAN9MmzRYdLFVpBNMOhpjdWeQGiCI2i6vmr5NGas",
+    naver: "310338245302c6fbb779d27e2d6728eabe7c8774",
   },
 };
 
@@ -87,10 +88,7 @@ export default function RootLayout({
       "/logo.svg",
     description:
       "취업의신 잡프라이즈는 15년 취업 컨설팅 노하우와 1,600만 방문 데이터를 기반으로 취업·채용 인사이트를 제공하는 대한민국 대표 취업 컨설팅 브랜드입니다.",
-    sameAs: [
-      "https://blog.naver.com/jobprise",
-      "http://pf.kakao.com/_CxofCd",
-    ],
+    sameAs: ["https://blog.naver.com/jobprise", "http://pf.kakao.com/_CxofCd"],
     founder: {
       "@type": "Person",
       name: "박장호",
