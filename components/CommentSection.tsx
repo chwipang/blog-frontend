@@ -1,66 +1,66 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { useForm } from 'react-hook-form'
-import { formatDatetime } from '@/lib/utils'
-import { getComments, createComment, type Comment } from '@/lib/api'
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { formatDate } from "@/lib/utils";
+import { getComments, createComment, type Comment } from "@/lib/api";
 
 interface CommentSectionProps {
-  postId: string
+  postId: string;
 }
 
 interface CommentFormData {
-  author_name: string
-  password: string
-  content: string
+  author_name: string;
+  password: string;
+  content: string;
 }
 
 export default function CommentSection({ postId }: CommentSectionProps) {
-  const [comments, setComments] = useState<Comment[]>([])
-  const [loading, setLoading] = useState(true)
-  const [submitting, setSubmitting] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<CommentFormData>()
+  } = useForm<CommentFormData>();
 
   useEffect(() => {
-    loadComments()
-  }, [postId])
+    loadComments();
+  }, [postId]);
 
   const loadComments = async () => {
     try {
-      const data = await getComments(postId)
-      setComments(data)
+      const data = await getComments(postId);
+      setComments(data);
     } catch (err) {
-      console.error('Failed to load comments:', err)
+      console.error("Failed to load comments:", err);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const onSubmit = async (data: CommentFormData) => {
-    setSubmitting(true)
-    setError(null)
+    setSubmitting(true);
+    setError(null);
 
     try {
       const newComment = await createComment({
         ...data,
         post_id: postId,
-      })
+      });
 
-      setComments([...comments, newComment])
-      reset()
+      setComments([...comments, newComment]);
+      reset();
     } catch (err: any) {
-      setError(err.message || 'Failed to post comment')
+      setError(err.message || "Failed to post comment");
     } finally {
-      setSubmitting(false)
+      setSubmitting(false);
     }
-  }
+  };
 
   if (loading) {
     return (
@@ -73,7 +73,7 @@ export default function CommentSection({ postId }: CommentSectionProps) {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -86,62 +86,89 @@ export default function CommentSection({ postId }: CommentSectionProps) {
       <form onSubmit={handleSubmit(onSubmit)} className="mb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <div>
-            <label htmlFor="author_name" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="author_name"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Name *
             </label>
             <input
               type="text"
               id="author_name"
-              {...register('author_name', {
-                required: 'Name is required',
-                minLength: { value: 1, message: 'Name must be at least 1 character' },
-                maxLength: { value: 50, message: 'Name must be less than 50 characters' }
+              {...register("author_name", {
+                required: "Name is required",
+                minLength: {
+                  value: 1,
+                  message: "Name must be at least 1 character",
+                },
+                maxLength: {
+                  value: 50,
+                  message: "Name must be less than 50 characters",
+                },
               })}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="Your name"
             />
             {errors.author_name && (
-              <p className="mt-1 text-sm text-red-600">{errors.author_name.message}</p>
+              <p className="mt-1 text-sm text-red-600">
+                {errors.author_name.message}
+              </p>
             )}
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Password *
             </label>
             <input
               type="password"
               id="password"
-              {...register('password', {
-                required: 'Password is required',
-                minLength: { value: 1, message: 'Password must be at least 1 character' },
-                maxLength: { value: 20, message: 'Password must be less than 20 characters' }
+              {...register("password", {
+                required: "Password is required",
+                minLength: {
+                  value: 1,
+                  message: "Password must be at least 1 character",
+                },
+                maxLength: {
+                  value: 20,
+                  message: "Password must be less than 20 characters",
+                },
               })}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="For editing/deleting later"
             />
             {errors.password && (
-              <p className="mt-1 text-sm text-red-600">{errors.password.message}</p>
+              <p className="mt-1 text-sm text-red-600">
+                {errors.password.message}
+              </p>
             )}
           </div>
         </div>
 
         <div className="mb-4">
-          <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-2">
+          <label
+            htmlFor="content"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
             Comment *
           </label>
           <textarea
             id="content"
-            {...register('content', {
-              required: 'Comment is required',
-              minLength: { value: 1, message: 'Comment cannot be empty' }
+            {...register("content", {
+              required: "Comment is required",
+              minLength: { value: 1, message: "Comment cannot be empty" },
             })}
             rows={4}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             placeholder="Write your comment..."
           />
           {errors.content && (
-            <p className="mt-1 text-sm text-red-600">{errors.content.message}</p>
+            <p className="mt-1 text-sm text-red-600">
+              {errors.content.message}
+            </p>
           )}
         </div>
 
@@ -156,7 +183,7 @@ export default function CommentSection({ postId }: CommentSectionProps) {
           disabled={submitting}
           className="btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {submitting ? 'Posting...' : 'Post Comment'}
+          {submitting ? "Posting..." : "Post Comment"}
         </button>
       </form>
 
@@ -168,18 +195,25 @@ export default function CommentSection({ postId }: CommentSectionProps) {
           </p>
         ) : (
           comments.map((comment) => (
-            <div key={comment.id} className="border-b border-gray-200 pb-6 last:border-b-0">
+            <div
+              key={comment.id}
+              className="border-b border-gray-200 pb-6 last:border-b-0"
+            >
               <div className="flex items-center justify-between mb-2">
-                <h4 className="font-medium text-gray-900">{comment.author_name}</h4>
+                <h4 className="font-medium text-gray-900">
+                  {comment.author_name}
+                </h4>
                 <time className="text-sm text-gray-500">
-                  {formatDatetime(comment.created_at)}
+                  {formatDate(comment.created_at)}
                 </time>
               </div>
-              <p className="text-gray-700 whitespace-pre-wrap">{comment.content}</p>
+              <p className="text-gray-700 whitespace-pre-wrap">
+                🔒비밀댓글입니다.
+              </p>
             </div>
           ))
         )}
       </div>
     </div>
-  )
+  );
 }
