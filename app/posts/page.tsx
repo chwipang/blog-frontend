@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PostCard from "@/components/PostCard";
+import Pagination from "@/components/Pagination";
 import { getPosts } from "@/lib/api";
 
 export const metadata = {
@@ -19,14 +20,19 @@ export const metadata = {
 export const dynamic = "force-dynamic"; // Skip static generation at build time
 export const revalidate = 60;
 
-export default async function PostsPage() {
+export default async function PostsPage({
+  searchParams,
+}: {
+  searchParams: { page?: string };
+}) {
+  const currentPage = Number(searchParams.page) || 1;
   let posts: any[] = [];
   let total = 0;
   let pages = 0;
   let error: Error | null = null;
 
   try {
-    const result = await getPosts(1, 12); // Get 12 posts per page
+    const result = await getPosts(currentPage, 12); // Get 12 posts per page
     posts = result.posts;
     total = result.total;
     pages = result.pages;
@@ -143,15 +149,8 @@ export default async function PostsPage() {
               ))}
             </div>
 
-            {/* Pagination placeholder - can be enhanced later */}
-            {pages > 1 && (
-              <div className="mt-12 text-center">
-                <p className="text-gray-600">전체 {pages}페이지 중 1페이지</p>
-                <p className="text-sm text-gray-500 mt-2">
-                  페이지네이션 기능 준비 중!
-                </p>
-              </div>
-            )}
+            {/* Pagination */}
+            <Pagination currentPage={currentPage} totalPages={pages} />
           </>
         ) : (
           <div className="text-center py-16">
